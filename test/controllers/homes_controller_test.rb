@@ -15,4 +15,9 @@ class HomesControllerTest < ActionDispatch::IntegrationTest
     get homes_show_url
     assert_response :success
   end
+
+  test "should get top" do
+    get homes_top_url
+    assert_response :success
+  end
 end
