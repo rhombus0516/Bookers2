@@ -1,2 +1,12 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<h1 class="text-center">welcom to Bookers</h1>
+<p class="d-flex align-text-center">In Bookers,<br>
+you can share and exchange your opinions , inpressions , and emotions<br>
+about various books!</p>
+
+<button class="d-block mx-auto">
+    <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-dark' %>
+</button>
+
+<button class="d-block mx-auto">
+    <%= link_to "Log in", new_user_session_path, class: 'nav-link text-dark'%>
+</button>

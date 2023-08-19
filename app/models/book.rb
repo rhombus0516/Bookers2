@@ -5,4 +5,5 @@ class Book < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_one_attached :image
+  belongs_to :use
 end

@@ -6,6 +6,7 @@ class DeviseCreateBooks < ActiveRecord::Migration[6.1]
       ## Database authenticatable
       t.string :title
       t.text :body
+      t.integer :user_id
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
