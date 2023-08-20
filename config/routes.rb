@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
 
   resources :books, only: [:new, :index, :create, :edit, :show, :destroy]
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:index, :show, :edit]
   
   patch 'books/:id' => 'books#update', as: 'update_book'
   

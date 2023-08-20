@@ -11,7 +11,7 @@
    </thead>
    <tbody>
        
-       <% @book.each do |book| %>
+       <% @books.each do |book| %>
        <tr>
            <td><%= image_tag @user.get_image, size: "200×200" %></td>
            <td><%= link_to book.title, "/books/#{book.id}" %></td>
