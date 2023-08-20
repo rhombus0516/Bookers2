@@ -1,2 +1,17 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1>Book detail</h1>
+<table>
+   <thead>
+       <tr>
+           <th>Title</th>
+           <th>Opinion</th>
+       </tr>
+   </thead>
+   <tbody>
+       <% @book.each do |book| %>
+       <tr>
+           <td><%= book.title %></td>
+           <td><%= book.body %></td>
+       </tr>
+       <% end %>
+   </tbody>
+</table>

@@ -1,13 +1,21 @@
 
 <h1>User info</h1>
 
-<% @book.each do |book| %>
-<% if book.image.attached? %>
-<%= image_tag book.image, size: "200×200" %>
-<% else %>
-<%= image_tag 'default-image', size: "200×200" %>
+<% @user.each do |user| %>
+    <% if user.image.attached? %>
+     <%= image_tag user.image, size: "200×200" %>
+    <% else %>
+     <%= image_tag 'no-image', size: "200×200" %>
+    <% end %>
+    
+    <%= user.name %>
+    <%= user.introduction %>
+    
 <% end %>
-<% end %>
+
+<p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+
+
 
 <h1>New book</h1>
 
@@ -19,3 +27,21 @@
 <%= f.text_area :body %>
 <%= f.submit 'Create Book' %>
 <% end %>
+
+
+<table>
+   <thead>
+       <tr>
+           <th>Title</th>
+           <th>Opinion</th>
+       </tr>
+   </thead>
+   <tbody>
+       <% @book.each do |book| %>
+       <tr>
+           <td><%= book.title %></td>
+           <td><%= book.body %></td>
+       </tr>
+       <% end %>
+   </tbody>
+</table>

@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
-  def show
+  def edit
   end
 
-  def edit
+  def show
+    @user = Book.find(params[:id])
+    @book = @user.book_images 
+  end
+
+  def index
   end
 end
