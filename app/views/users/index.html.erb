@@ -2,10 +2,20 @@
 <%= render 'books/book', book: @book %>
 
 <h1>Users</h1>
-
+<table>
+    <thead>
+        <tr>
+        <th>iamge</th>
+        <th>name</th>
+        </tr>
+    </thead>
+    <tbody>
 <% @user %>
+    <tr>
+    <td><%= image_tag @user.get_image, size: "200×200" %></td>
+    <td>name<%= @user.name %></td>
     
-    <%= image_tag @user.get_image, size: "200×200" %>
-    <div>name<%= @user.name %></div>
-    
-<%= link_to "show", user_path(@user.id) %>
+    <td><%= link_to "show", user_path(@user.id) %></td>
+</tr>
+</tbody>
+</table>
