@@ -4,9 +4,12 @@
 <div>
 <%= image_tag @book.user.get_image %>
 </div>
-<%= @book.user.name %>
+<%= link_to @book.user.name, "/users/#{@user.id}" %>
 <h5><%= @book.title %></h5>
 <h5><%= @book.body %></h5>
 
 <%= link_to "Edit", edit_book_path(@book.id) %>
-<%= link_to "Destroy", books_path(@book.id) %>
+
+<% if @book.user ==  current_user %>
+<%= link_to "Destroy", destroy_book_path, method: :delete, "data-confirm" => "本当に消しますか?" %>
+<% end %>
