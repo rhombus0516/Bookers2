@@ -14,4 +14,7 @@ class User < ApplicationRecord
     end
       image
   end
+    validates:name, presence: true
+    validates:introduction, presence: true
+    validates:image, presence: true
 end
