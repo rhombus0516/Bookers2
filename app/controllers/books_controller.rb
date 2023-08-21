@@ -6,8 +6,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-    @book.save
+     if @book.save
+       flash[:notice] = "You have created book successfully."
     redirect_to book_path(@book.id)
+     else
+       flash.now[:alert] = "You don't created book successfully."
+    render :new
+     end
   end
 
 
@@ -28,8 +33,12 @@ class BooksController < ApplicationController
   
   def update
     book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path
+    if book.update(book_params)
+     flash[:notice] = "You have update book successfully."
+     redirect_to book_path
+    else
+      flash[:notice] = "You don't update book successfully."
+    end
   end  
   
   def destroy
