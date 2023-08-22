@@ -12,10 +12,12 @@
     </div>
 </div>
 
-<button class="d-block mx-auto" style="background-color:#007bff;">
+
+<button class="d-block mx-auto" style= "background-color:#17a2b8;">
+    <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white'%>
+</button>
+
+<button class="d-block mx-auto" style="background-color:#28a745;">
     <%= link_to "Sign up", new_user_registration_path, class: 'nav-link text-white' %>
 </button>
 
-<button class="d-block mx-auto" style= "background-color:#28a745;">
-    <%= link_to "Log in", new_user_session_path, class: 'nav-link text-white'%>
-</button>

@@ -1,6 +1,9 @@
-<div>
+<% if flash[:notice] %>
+<p id= "notice">
     <%= flash[:notice] %>
-</div>
+</p>
+<% end %>
+
 <% if @user.errors.any? %>
     <%= @user.errors.count %>件エラーが発生しました
     <ul>
@@ -19,7 +22,6 @@
      <%= f.text_area :introduction, autofocus: true, id:"inputIntroduction", placecholder:"自己紹介"%>
      <%= f.submit "Update User" %>
  <% end %>
- 
  
 
 
